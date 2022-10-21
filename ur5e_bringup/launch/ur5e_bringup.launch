@@ -1,0 +1,22 @@
+<launch>
+
+    <arg name="robot_name" default="ur5e" />
+    <arg name="robot_ip" default="10.15.20.4"/>
+    <arg name="kinematics_config" default="$(find ur5e_bringup)/config/ur5e_calibration.yaml" />
+    <arg name="rviz_config" default="$(find ur5e_bringup)/config/rviz_config.rviz" />
+    <arg name="headless_mode" default="true" />
+
+    <!-- Create transfor between panther and ur5e manipulator -->
+    <!-- <node pkg="tf" type="static_transform_publisher" name="ur5e_broadcaster" args="-0.135 0.1725 0.354 3.14 0 0 base_link $(arg robot_name)_base 100" /> -->
+    
+    <include file="$(find ur_robot_driver)/launch/ur5e_bringup.launch">
+        <arg name="robot_ip" value="$(arg robot_name)" />
+        <arg name="kinematics_config" value="$(arg kinematics_config)" />
+        <arg name="headless_mode" value="$(arg headless_mode)" />
+    </include>
+
+    <include file="$(find ur5e_moveit_config)/launch/moveit_planning_execution.launch" />
+    
+    <node name="rviz" pkg="rviz" type="rviz" respawn="false" output="screen" args="-d $(arg rviz_config)"/>
+
+</launch>
