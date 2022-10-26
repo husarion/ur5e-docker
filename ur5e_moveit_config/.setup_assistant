@@ -1,15 +1,11 @@
 moveit_setup_assistant_config:
-  # URDF:
-  #   package: ur5e_moveit_config
-  #   relative_path: urdf/panther_ur5e.urdf.xacro
-  #   xacro_args: ""
   URDF:
-    package: ur_description
-    relative_path: urdf/ur5e.xacro
+    package: ur5e_moveit_config
+    relative_path: urdf/panther_ur5e.urdf.xacro
     xacro_args: ""
   SRDF:
     relative_path: config/ur5e.srdf
   CONFIG:
     author_name: Pawel Kowalski
     author_email: pawel.kowalski@husarion.com
-    generated_timestamp: 1611154369
+    generated_timestamp: 1666779449
