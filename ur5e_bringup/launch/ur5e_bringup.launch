@@ -7,10 +7,7 @@
     <arg name="headless_mode" default="true" />
     <arg name="use_rviz" default="false" />
 
-    <!-- <param name="robot_description" command="$(find xacro)/xacro -inorder $(find panther_description)/../examples/ouster_os1_32/panther.urdf.xacro" />
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-
-    <node pkg="tf" type="static_transform_publisher" name="ur5e_broadcaster" args="-0.135 0.1725 0.354 3.14 0 0 base_link base_link_inertia 100" /> -->
+    <node pkg="tf" type="static_transform_publisher" name="velodyne_broadcaster" args="0.075 -0.13 0.357 0.0 0 0 base_link velodyne 100" /> -->
     
     <include file="$(find ur_robot_driver)/launch/ur5e_bringup.launch">
         <arg name="robot_ip" value="$(arg robot_ip)" />
