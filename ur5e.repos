@@ -11,6 +11,10 @@ repositories:
     type: git
     url: https://github.com/husarion/panther_description.git
     version: 9927106ecf4ad79abf0a595189829c22a1dc5873
+  realsense-ros:
+    type: git
+    url: https://github.com/IntelRealSense/realsense-ros
+    version: development
   ros_componenst_description:
     type: git
     url: https://github.com/husarion/ros_components_description.git

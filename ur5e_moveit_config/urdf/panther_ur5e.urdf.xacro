@@ -4,14 +4,21 @@
 
   <xacro:include filename="$(find ur5e_moveit_config)/urdf/panther_base_macro.urdf.xacro" ns="husarion" />
   <xacro:include filename="$(find ur5e_moveit_config)/urdf/ur_macro.xacro" ns="universal_robot"/>
+  <xacro:include filename="$(find ur5e_moveit_config)/urdf/upper_rails.urdf.xacro" ns="rails" />
   <xacro:include filename="$(find ur5e_moveit_config)/urdf/external_antena_macro.urdf.xacro" ns="antena" />
   <xacro:include filename="$(find ur5e_moveit_config)/urdf/power_supply_macro.xacro" ns="power_supply"/>
   <xacro:include filename="$(find panther_description)/urdf/components/velodyne_puck.gazebo.xacro" ns="velodyne" />
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435i.urdf.xacro" ns="rs"/>
 
   <xacro:husarion.panther_base  />
-  <xacro:antena.external_antenna parent_link="base_link" xyz="0.18 0.15 0.377" rpy="0 0 3.1415"  />
-  <xacro:power_supply.power_supply parent_link="base_link" xyz="0.0 -0.065 0.227" rpy="0 0 0.0"  />
-  <xacro:velodyne.velodyne_puck xyz="0.05 -0.13 0.357" rpy="0 0 0" />
+  <xacro:rails.upper_rails parent_link="base_link" xyz="0.0 0.0 0.334" rpy="0.0 ${-pi/2} 0.0"  />
+  <xacro:antena.external_antenna parent_link="base_link" xyz="0.18 0.15 0.377" rpy="0.0 0.0 ${pi}"  />
+  <xacro:power_supply.power_supply parent_link="base_link" xyz="0.0 -0.13 0.377" rpy="0.0 0.0 0.0"  />
+  <xacro:velodyne.velodyne_puck xyz="0.05 -0.13 0.35" rpy="0.0 0.0 0.0" />
+
+  <xacro:rs.sensor_d435i parent="base_link" use_nominal_extrinsics="true">
+    <origin xyz="0.19 0.05 0.427" rpy="0 0 0"/>
+  </xacro:rs.sensor_d435i>
 
   <xacro:universal_robot.ur_robot
     prefix=""
@@ -26,7 +33,7 @@
   />
   
   <joint name="base_link_to_ur5e_link_joint" type="fixed">
-    <origin xyz="-0.10 0.10 0.375" rpy="0 0 1.54" />
+    <origin xyz="-0.095 0.0975 0.375" rpy="0 0 ${pi/2}" />
     <parent link="base_link" />
     <child link="ur5e_link" />
   </joint>
