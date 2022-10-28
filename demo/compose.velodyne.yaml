@@ -1,7 +1,6 @@
 services:
   velodyne:
-    # image: husarion/velodyne:noetic
-    build: ./
+    image: husarion/velodyne:noetic
     container_name: velodyne
     restart: on-failure
     network_mode: host

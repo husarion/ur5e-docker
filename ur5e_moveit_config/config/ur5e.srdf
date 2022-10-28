@@ -69,7 +69,7 @@
     <disable_collisions link1="cover_link" link2="front_left_wheel_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="front_right_wheel_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="front_velodyne_puck_link" reason="Never" />
-    <disable_collisions link1="cover_link" link2="power_supply_link" reason="Default" />
+    <disable_collisions link1="cover_link" link2="power_supply_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="rails_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="rear_right_wheel_link" reason="Never" />
@@ -103,7 +103,7 @@
     <disable_collisions link1="front_velodyne_puck_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="front_velodyne_puck_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="front_velodyne_puck_link" link2="shoulder_link" reason="Never" />
-    <disable_collisions link1="power_supply_link" link2="rails_link" reason="Default" />
+    <disable_collisions link1="power_supply_link" link2="rails_link" reason="Never" />
     <disable_collisions link1="power_supply_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="power_supply_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="power_supply_link" link2="shoulder_link" reason="Never" />

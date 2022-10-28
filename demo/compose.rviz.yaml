@@ -1,7 +1,7 @@
 services:
 
   rviz:
-    build: ./..
+    image: husarion/ur5e:melodic
     container_name: rviz
     restart: on-failure
     network_mode: host
