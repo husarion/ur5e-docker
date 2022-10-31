@@ -2,11 +2,11 @@ repositories:
   Universal_Robots_ROS_Driver:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
-    version: master
+    version: 222d67aad0bfb4f35e7acc32d34b4fb74710c0bd
   universal_robot:
     type: git
     url: https://github.com/ros-industrial/universal_robot.git
-    version: melodic-devel-staging
+    version: addbe3fc2b8f4fd3afc65d2c8f9a5380324e04ba
   panther_description:
     type: git
     url: https://github.com/husarion/panther_description.git
@@ -14,8 +14,8 @@ repositories:
   realsense-ros:
     type: git
     url: https://github.com/IntelRealSense/realsense-ros
-    version: development
+    version: e4938bbbfd7b285fe71f81fe69cebcc76dbf72fc
   ros_componenst_description:
     type: git
     url: https://github.com/husarion/ros_components_description.git
-    version: ros1
+    version: 2741e24f899026fde88bd0cd20b0708d919c776d
