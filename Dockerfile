@@ -19,6 +19,7 @@ RUN apt-get update && \
         vcstool && \
     vcs import src < /ur5e.repos && \
     mv src/universal_robot/ur_description src/ur_description && \
+    mv src/universal_robot/ur_gazebo src/ur_gazebo && \
     rm -rf src/universal_robot && \
     mv src/realsense-ros/realsense2_description src/realsense2_description && \
     rm -rf src/realsense-ros && \

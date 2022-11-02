@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 
 <robot name="panther_ur5e" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
+  
   <xacro:include filename="$(find ur5e_moveit_config)/urdf/panther_base_macro.urdf.xacro" ns="husarion" />
   <xacro:include filename="$(find ur5e_moveit_config)/urdf/ur_macro.xacro" ns="universal_robot"/>
   <xacro:include filename="$(find ur5e_moveit_config)/urdf/external_antena_macro.urdf.xacro" ns="antena" />

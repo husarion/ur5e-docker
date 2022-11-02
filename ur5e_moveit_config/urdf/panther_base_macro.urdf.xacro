@@ -20,6 +20,7 @@
     <xacro:include filename="$(find panther_description)/urdf/materials.urdf.xacro" />
     <xacro:include filename="$(find panther_description)/urdf/body.urdf.xacro" ns="body" />
     <xacro:include filename="$(find panther_description)/urdf/wheel.urdf.xacro" ns="wheel" />
+    <xacro:include filename="$(find panther_description)/urdf/gazebo_plugins.gazebo.xacro" ns="gazebo" />
 
     <!-- BODY DECLARATION -->
     <xacro:body.body props="${panther_common_props['body']}" wheel_props="${wheel_props['wheels']}" />
@@ -29,7 +30,8 @@
     <xacro:wheel.wheel wheel_props="${wheel_props['wheels']}" common_props="${panther_common_props}" prefix="front_right" />
     <xacro:wheel.wheel wheel_props="${wheel_props['wheels']}" common_props="${panther_common_props}" prefix="rear_left" />
     <xacro:wheel.wheel wheel_props="${wheel_props['wheels']}" common_props="${panther_common_props}" prefix="rear_right" />
-  
-  </xacro:macro>
 
+    <xacro:gazebo.wheel_driver wheel_props="${wheel_props}" common_props="${panther_common_props}" />
+
+  </xacro:macro>
 </robot>
