@@ -9,12 +9,11 @@
     <xacro:arg name="use_gpu" default="false" />
 
     <!-- IMPORT YAML CONFIGS -->
-    <xacro:property name="panther_common_props_file" value="$(arg panther_common_props_path)"  />
+    <xacro:property name="panther_common_props_file" value="$(arg panther_common_props_path)" />
     <xacro:property name="panther_common_props" value="${xacro.load_yaml(panther_common_props_file)}" />
 
-    <xacro:property name="wheel_props_file" value="$(arg wheel_props_path)"  />
+    <xacro:property name="wheel_props_file" value="$(arg wheel_props_path)" />
     <xacro:property name="wheel_props" value="${xacro.load_yaml(wheel_props_file)}" />
-
 
     <!-- INCLUDE ROBOT PARTS DEFINITIONS -->
     <xacro:include filename="$(find panther_description)/urdf/materials.urdf.xacro" />

@@ -43,6 +43,7 @@
     <disable_collisions link1="base_link_inertia" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="base_link_inertia" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="base_link_inertia" link2="shoulder_link" reason="Adjacent" />
+    <disable_collisions link1="base_link_inertia" link2="upper_rails_link" reason="Adjacent" />
     <disable_collisions link1="base_link_inertia" link2="velodyne_puck_link" reason="Adjacent" />
     <disable_collisions link1="body_link" link2="camera_link" reason="Adjacent" />
     <disable_collisions link1="body_link" link2="cover_link" reason="Adjacent" />
@@ -54,6 +55,7 @@
     <disable_collisions link1="body_link" link2="rear_left_wheel_link" reason="Adjacent" />
     <disable_collisions link1="body_link" link2="rear_right_wheel_link" reason="Adjacent" />
     <disable_collisions link1="body_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="body_link" link2="upper_rails_link" reason="Adjacent" />
     <disable_collisions link1="body_link" link2="velodyne_puck_link" reason="Adjacent" />
     <disable_collisions link1="camera_link" link2="cover_link" reason="Never" />
     <disable_collisions link1="camera_link" link2="external_antenna_link" reason="Adjacent" />
@@ -64,6 +66,7 @@
     <disable_collisions link1="camera_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="camera_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="camera_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="upper_rails_link" reason="Adjacent" />
     <disable_collisions link1="camera_link" link2="velodyne_puck_link" reason="Adjacent" />
     <disable_collisions link1="cover_link" link2="external_antenna_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="front_left_wheel_link" reason="Never" />
@@ -73,6 +76,7 @@
     <disable_collisions link1="cover_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="cover_link" link2="upper_rails_link" reason="Never" />
     <disable_collisions link1="cover_link" link2="velodyne_puck_link" reason="Never" />
     <disable_collisions link1="external_antenna_link" link2="front_left_wheel_link" reason="Never" />
     <disable_collisions link1="external_antenna_link" link2="front_right_wheel_link" reason="Never" />
@@ -81,6 +85,7 @@
     <disable_collisions link1="external_antenna_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="external_antenna_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="external_antenna_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="external_antenna_link" link2="upper_rails_link" reason="Adjacent" />
     <disable_collisions link1="external_antenna_link" link2="velodyne_puck_link" reason="Adjacent" />
     <disable_collisions link1="forearm_link" link2="upper_arm_link" reason="Adjacent" />
     <disable_collisions link1="forearm_link" link2="wrist_1_link" reason="Adjacent" />
@@ -91,29 +96,37 @@
     <disable_collisions link1="front_left_wheel_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="front_left_wheel_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="front_left_wheel_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="front_left_wheel_link" link2="upper_rails_link" reason="Never" />
     <disable_collisions link1="front_left_wheel_link" link2="velodyne_puck_link" reason="Never" />
     <disable_collisions link1="front_right_wheel_link" link2="power_supply_link" reason="Never" />
     <disable_collisions link1="front_right_wheel_link" link2="rails_link" reason="Never" />
     <disable_collisions link1="front_right_wheel_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="front_right_wheel_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="front_right_wheel_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="front_right_wheel_link" link2="upper_rails_link" reason="Never" />
     <disable_collisions link1="front_right_wheel_link" link2="velodyne_puck_link" reason="Never" />
     <disable_collisions link1="power_supply_link" link2="rails_link" reason="Never" />
     <disable_collisions link1="power_supply_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="power_supply_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="power_supply_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="power_supply_link" link2="upper_rails_link" reason="Adjacent" />
     <disable_collisions link1="power_supply_link" link2="velodyne_puck_link" reason="Adjacent" />
     <disable_collisions link1="rails_link" link2="rear_left_wheel_link" reason="Never" />
     <disable_collisions link1="rails_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="rails_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="rails_link" link2="upper_rails_link" reason="Never" />
     <disable_collisions link1="rails_link" link2="velodyne_puck_link" reason="Never" />
     <disable_collisions link1="rear_left_wheel_link" link2="rear_right_wheel_link" reason="Never" />
     <disable_collisions link1="rear_left_wheel_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="rear_left_wheel_link" link2="upper_rails_link" reason="Never" />
     <disable_collisions link1="rear_left_wheel_link" link2="velodyne_puck_link" reason="Never" />
     <disable_collisions link1="rear_right_wheel_link" link2="shoulder_link" reason="Never" />
+    <disable_collisions link1="rear_right_wheel_link" link2="upper_rails_link" reason="Never" />
     <disable_collisions link1="rear_right_wheel_link" link2="velodyne_puck_link" reason="Never" />
     <disable_collisions link1="shoulder_link" link2="upper_arm_link" reason="Adjacent" />
+    <disable_collisions link1="shoulder_link" link2="upper_rails_link" reason="Never" />
     <disable_collisions link1="shoulder_link" link2="velodyne_puck_link" reason="Never" />
+    <disable_collisions link1="upper_rails_link" link2="velodyne_puck_link" reason="Adjacent" />
     <disable_collisions link1="wrist_1_link" link2="wrist_2_link" reason="Adjacent" />
     <disable_collisions link1="wrist_1_link" link2="wrist_3_link" reason="Never" />
     <disable_collisions link1="wrist_2_link" link2="wrist_3_link" reason="Adjacent" />

@@ -28,20 +28,20 @@
         <geometry>
           <mesh filename="file://$(find ur5e_moveit_config)/meshes/external_antenna.dae" />
         </geometry>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
       </visual>
 
       <collision>
         <geometry>
           <mesh filename="file://$(find ur5e_moveit_config)/meshes/external_antenna_collision.stl" />
         </geometry>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
       </collision>
 
       <inertial>
         <mass value="0.59" />
         <inertia ixx="0.003964" ixy="0.0" ixz="0.0" iyy="0.0003964" iyz="0.0" izz="0.0004177" />
-        <origin xyz="0.045 0.0 0.0058" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.045 0.0 0.0058" rpy="0.0 0.0 0.0" />
       </inertial>
     </link>
 

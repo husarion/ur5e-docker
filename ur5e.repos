@@ -13,7 +13,7 @@ repositories:
     version: 9927106ecf4ad79abf0a595189829c22a1dc5873
   realsense-ros:
     type: git
-    url: https://github.com/IntelRealSense/realsense-ros
+    url: https://github.com/IntelRealSense/realsense-ros.git
     version: e4938bbbfd7b285fe71f81fe69cebcc76dbf72fc
   ros_componenst_description:
     type: git

@@ -40,7 +40,7 @@ docker compose \
     up
 ```
 
-After a successful launch, open the Web browser and go to [10.15.20.3:8080](http://10.15.20.3:8080/vnc_auto.html). Enter a password (default `husarion`) and you should see RViz and Panther with the manipulator.
+After a successful launch, open the Web browser and go to [10.15.20.3:8080/vnc_auto.html](http://10.15.20.3:8080/vnc_auto.html). Enter a password (default `husarion`) and you should see RViz and Panther with the manipulator.
 
 Use RViz MoveIt! plugin to control the UR5e robot.
 
@@ -58,7 +58,7 @@ docker compose -f compose.ur5e-gazebo.yaml up
 
 Use RViz MoveIt! plugin to control the UR5e robot.
 
-If you have enough computing power, you can add `PointClodu` from LiDAR in Rviz (`Add->By Topic->PointCloud`).
+If you have enough computing power, you can add `PointCloud` from LiDAR in Rviz (`Add->By Topic->PointCloud`).
 
 # Custom Configuration
 
@@ -67,6 +67,6 @@ If your Panther is equipped with other devices/sensors you can change the .urdf 
 ```bash
 cd ./ur5e-docker/demo
 
-xhost local:root
+xhost local:docker
 docker compose -f compose.moveit-menager.yaml up
 ```
