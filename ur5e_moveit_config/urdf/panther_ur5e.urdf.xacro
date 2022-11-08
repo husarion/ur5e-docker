@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+
+<robot name="panther_ur5e" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find ur5e_moveit_config)/urdf/panther_base_macro.urdf.xacro" ns="husarion" />
+  <xacro:include filename="$(find ur5e_moveit_config)/urdf/ur_macro.xacro" ns="universal_robot" />
+  <xacro:include filename="$(find ur5e_moveit_config)/urdf/external_antena_macro.urdf.xacro" ns="antena" />
+  <xacro:include filename="$(find ur5e_moveit_config)/urdf/power_supply_macro.xacro" ns="power_supply" />
+  <xacro:include filename="$(find ros_components_description)/urdf/velodyne_puck.gazebo.xacro" ns="velodyne" />
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435i.urdf.xacro" ns="rs" />
+
+  <!-- !TODO: 
+          when updating the package to the latest version of panther_description, 
+          add rails that reflect the actual components -->
+
+  <xacro:include filename="$(find ur5e_moveit_config)/urdf/upper_rails.urdf.xacro" ns="rails" />
+  <xacro:rails.upper_rails parent_link="base_link" xyz="0.0 0.0 0.334" rpy="0.0 ${-pi/2} 0.0" />
+
+  <xacro:husarion.panther_base />
+  <xacro:antena.external_antenna parent_link="base_link" xyz="0.18 0.15 0.377" rpy="0.0 0.0 ${pi}" />
+  <xacro:power_supply.power_supply parent_link="base_link" xyz="0.0 -0.13 0.377" rpy="0.0 0.0 0.0" />
+  <xacro:velodyne.velodyne_puck parent_link="base_link" xyz="0.05 -0.13 0.527" rpy="0.0 0.0 0.0" />
+
+  <xacro:rs.sensor_d435i parent="base_link" use_nominal_extrinsics="true">
+    <origin xyz="0.19 0.05 0.427" rpy="0.0 0.0 0.0" />
+  </xacro:rs.sensor_d435i>
+
+  <xacro:universal_robot.ur_robot
+    prefix=""
+    joint_limits_parameters_file="$(find ur_description)/config/ur5e/joint_limits.yaml"
+    kinematics_parameters_file="$(find ur_description)/config/ur5e/default_kinematics.yaml"
+    physical_parameters_file="$(find ur_description)/config/ur5e/physical_parameters.yaml"
+    visual_parameters_file="$(find ur_description)/config/ur5e/visual_parameters.yaml"
+    transmission_hw_interface="hardware_interface/PositionJointInterface"
+    safety_limits="false"
+    safety_pos_margin="0.15"
+    safety_k_position="20"
+  />
+  
+  <joint name="base_link_to_ur5e_link_joint" type="fixed">
+    <origin xyz="-0.095 0.0975 0.375" rpy="0.0 0.0 ${pi/2}" />
+    <parent link="base_link" />
+    <child link="ur5e_link" />
+  </joint>
+
+</robot>
