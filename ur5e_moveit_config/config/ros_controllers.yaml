@@ -9,30 +9,31 @@ generic_hw_control_loop:
 # Settings for ros_control hardware interface
 hardware_interface:
   joints:
-    - front_left_wheel_joint
-    - front_right_wheel_joint
-    - rear_left_wheel_joint
-    - rear_right_wheel_joint
-    - shoulder_pan_joint
-    - shoulder_lift_joint
-    - elbow_joint
-    - wrist_1_joint
-    - wrist_2_joint
-    - wrist_3_joint
+    - panther_ur5e_shoulder_pan_joint
+    - panther_ur5e_shoulder_lift_joint
+    - panther_ur5e_elbow_joint
+    - panther_ur5e_wrist_1_joint
+    - panther_ur5e_wrist_2_joint
+    - panther_ur5e_wrist_3_joint
+    - fl_wheel_joint
+    - fr_wheel_joint
+    - rl_wheel_joint
+    - rr_wheel_joint
   sim_control_mode: 1  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS
-# joint_state_controller:
-#   type: joint_state_controller/JointStateController
-#   publish_rate: 50
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
 controller_list:
-  - name: "scaled_pos_joint_traj_controller"
+  - name: scaled_pos_joint_traj_controller
     action_ns: follow_joint_trajectory
+    default: True
     type: FollowJointTrajectory
     joints:
-      - shoulder_pan_joint
-      - shoulder_lift_joint
-      - elbow_joint
-      - wrist_1_joint
-      - wrist_2_joint
-      - wrist_3_joint
+      - panther_ur5e_elbow_joint
+      - panther_ur5e_shoulder_lift_joint
+      - panther_ur5e_shoulder_pan_joint
+      - panther_ur5e_wrist_1_joint
+      - panther_ur5e_wrist_2_joint
+      - panther_ur5e_wrist_3_joint

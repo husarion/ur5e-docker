@@ -1,0 +1,7 @@
+repositories:
+  onrobot-rg2:
+    type: git
+    url: https://github.com/Osaka-University-Harada-Laboratory/onrobot.git
+    version: 5551845a2b4d0ba266479640139653baee8e78bb
+
+

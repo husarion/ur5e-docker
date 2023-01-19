@@ -7,6 +7,7 @@ find_package(catkin REQUIRED)
 catkin_package()
 
 include_directories(
-  launch config
+  launch
+  config
   ${catkin_INCLUDE_DIRS}
 )

@@ -13,7 +13,7 @@ xtightvncviewer 10.15.20.4
 
 Expectations:
 
-![](./docs/initialize_tab.png)
+![](./.docs/initialize_tab.png)
 
 **Make sure the robot is in remote control mode. This mode can be changed in the upper right corner.**
 

@@ -4,9 +4,10 @@ SHELL ["/bin/bash", "-c"]
 
 WORKDIR /ros_ws
 
-COPY ./ur5e_moveit_config ./src/ur5e_moveit_config
+COPY ./ur5e ./src/ur5e
 COPY ./ur5e_bringup ./src/ur5e_bringup
-COPY ./ur5e.repos /
+COPY ./ur5e_components_description ./src/ur5e_components_description
+COPY ./ur5e_moveit_config ./src/ur5e_moveit_config
 
 RUN apt-get update && \
     apt-get install -y \
@@ -17,13 +18,17 @@ RUN apt-get update && \
     pip3 install \
         rosdep \
         vcstool && \
-    vcs import src < /ur5e.repos && \
-    rm /ur5e.repos && \
+    vcs import src < src/ur5e/ur5e.repos && \
+    vcs import src < src/ur5e_moveit_config/assets.repos && \
+    # Use only the necessary packages
+    mv src/panther_ros/panther_description src/panther_description && \
+    rm -rf src/panther_ros && \
     mv src/universal_robot/ur_description src/ur_description && \
     mv src/universal_robot/ur_gazebo src/ur_gazebo && \
     rm -rf src/universal_robot && \
     mv src/realsense-ros/realsense2_description src/realsense2_description && \
     rm -rf src/realsense-ros && \
+    # Build ROS pkgs
     rosdep init && \
     rosdep update --rosdistro=$ROS_DISTRO && \
     rosdep install --from-paths src --ignore-src -y && \
