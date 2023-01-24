@@ -4,9 +4,10 @@ SHELL ["/bin/bash", "-c"]
 
 WORKDIR /ros_ws
 
-COPY ./ur5e ./src/ur5e
-COPY ./ur5e_bringup ./src/ur5e_bringup
-COPY ./ur5e_components_description ./src/ur5e_components_description
+COPY ./ur ./src/ur
+COPY ./ur_bringup ./src/ur_bringup
+COPY ./ur_components_description ./src/ur_components_description
+COPY ./ur3_moveit_config ./src/ur3_moveit_config
 COPY ./ur5e_moveit_config ./src/ur5e_moveit_config
 
 RUN apt-get update && \
@@ -18,7 +19,7 @@ RUN apt-get update && \
     pip3 install \
         rosdep \
         vcstool && \
-    vcs import src < src/ur5e/ur5e.repos && \
+    vcs import src < src/ur/ur.repos && \
     vcs import src < src/ur5e_moveit_config/assets.repos && \
     # Use only the necessary packages
     mv src/panther_ros/panther_description src/panther_description && \

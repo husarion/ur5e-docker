@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>ur5e_bringup</name>
+  <name>ur</name>
   <version>0.0.1</version>
 
-  <description>Default launch files and configuration used to start UR5e</description>
+  <description>Meta package that contains all packages of UR5e demo</description>
   <license>Apache License 2.0</license>
 
   <author email="pawel.kowalski@husarion.com">Pawel Kowalski</author>
@@ -15,9 +15,4 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>ur_calibration</depend>
-  <depend>ur_robot_driver</depend>
-  <depend>ur5e_moveit_config</depend>
-
-  <export></export>
 </package>

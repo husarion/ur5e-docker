@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>ur5e</name>
+  <name>ur_components_description</name>
   <version>0.0.1</version>
 
-  <description>Meta package that contains all packages of UR5e demo</description>
+  <description>Default launch files and configuration used to start UR5e</description>
   <license>Apache License 2.0</license>
 
   <author email="pawel.kowalski@husarion.com">Pawel Kowalski</author>
@@ -14,5 +14,4 @@
   <url type="bugtracker">https://github.com/husarion/ur5e-docker/issues</url>
 
   <buildtool_depend>catkin</buildtool_depend>
-
 </package>

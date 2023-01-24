@@ -1,13 +1,13 @@
 
 cmake_minimum_required(VERSION 3.0.2)
-project(ur5e_bringup)
+project(ur_components_description)
 
 find_package(catkin REQUIRED)
 
 catkin_package()
 
 include_directories(
-  launch
-  config
+  meshes
+  urdf
   ${catkin_INCLUDE_DIRS}
 )

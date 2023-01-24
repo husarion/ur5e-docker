@@ -9,9 +9,7 @@
   <xacro:include filename="$(find panther_description)/urdf/panther_macro.urdf.xacro" ns="husarion" />
   <xacro:include filename="$(find ur_description)/urdf/inc/ur5e_macro.xacro" ns="universal_robot"/>
 
-  <xacro:husarion.panther_robot
-    dual_bat="$(arg dual_bat)"
-    wheel_config_path="$(arg wheel_config_path)" />
+  <xacro:husarion.panther_robot dual_bat="$(arg dual_bat)" wheel_config_path="$(arg wheel_config_path)" />
   <xacro:universal_robot.ur5e_robot prefix="panther_ur5e_" />
 
   <joint name="base_link_to_ur5e_link_joint" type="fixed">
@@ -31,8 +29,8 @@
 
   <!-- Components -->
   <xacro:include filename="$(find panther_description)/urdf/components/external_antenna.urdf.xacro" ns="antena" />
-  <xacro:include filename="$(find ur5e_components_description)/urdf/power_supply.urdf.xacro" ns="power_supply" />
-  <xacro:include filename="$(find ur5e_components_description)/urdf/upper_rails.urdf.xacro" ns="rails" />
+  <xacro:include filename="$(find ur_components_description)/urdf/power_supply.urdf.xacro" ns="power_supply" />
+  <xacro:include filename="$(find ur_components_description)/urdf/upper_rails.urdf.xacro" ns="rails" />
 
   <xacro:antena.external_antenna parent_link="base_link" xyz="0.18 0.15 0.377" rpy="0.0 0.0 ${pi}" />
   <xacro:power_supply.power_supply parent_link="base_link" xyz="0.0 -0.13 0.377" rpy="0.0 0.0 0.0" />
