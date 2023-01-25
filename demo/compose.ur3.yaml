@@ -15,5 +15,5 @@ services:
       - ./../ur_bringup:/ros_ws/src/ur_bringup
     command: >
       roslaunch ur_bringup ur3_bringup.launch 
-        robot_ip:=10.42.0.42
+        robot_ip:=10.15.20.202
         kinematics_config:=/ros_ws/src/ur_bringup/config/ur3_calibration.yaml

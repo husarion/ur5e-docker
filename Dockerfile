@@ -9,6 +9,7 @@ COPY ./ur_bringup ./src/ur_bringup
 COPY ./ur_components_description ./src/ur_components_description
 COPY ./ur3_moveit_config ./src/ur3_moveit_config
 COPY ./ur5e_moveit_config ./src/ur5e_moveit_config
+COPY ./ur5e_onrobot_rg2_moveit_config ./src/ur5e_onrobot_rg2_moveit_config
 
 RUN apt-get update && \
     apt-get install -y \
@@ -21,6 +22,7 @@ RUN apt-get update && \
         vcstool && \
     vcs import src < src/ur/ur.repos && \
     vcs import src < src/ur5e_moveit_config/assets.repos && \
+    vcs import src < src/ur5e_onrobot_rg2_moveit_config/assets.repos && \
     # Use only the necessary packages
     mv src/panther_ros/panther_description src/panther_description && \
     rm -rf src/panther_ros && \
