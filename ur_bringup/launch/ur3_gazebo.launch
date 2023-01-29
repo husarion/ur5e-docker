@@ -16,7 +16,12 @@
     <arg name="stopped_controllers" value="$(arg stopped_controllers)" />
   </include>
 
-  <node if="$(arg use_rviz)" name="rviz" pkg="rviz" type="rviz" respawn="false" output="screen" args="-d $(arg rviz_config)" />
+  <rosparam file="$(find panther_gazebo)/config/panther_ros_controler.yaml" command="load" />
+  <node name="panther_controller_manager" pkg="controller_manager" type="spawner"
+    respawn="false" output="screen" args="panther_base_controller" />
+
+  <node if="$(arg use_rviz)" name="rviz" pkg="rviz" type="rviz" respawn="false" output="screen"
+    args="-d $(arg rviz_config)" />
 
 </launch>
   

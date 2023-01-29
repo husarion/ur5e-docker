@@ -10,12 +10,15 @@
   </include>
 
   <include file="$(find ur_gazebo)/launch/ur5e_bringup.launch">
-    <arg name="robot_description_file"
-      value="$(find ur5e_onrobot_rg2_moveit_config)/launch/load_ur5e.launch" />
+    <arg name="robot_description_file" value="$(find ur5e_onrobot_rg2_moveit_config)/launch/load_ur5e.launch" />
     <arg name="controller_config_file" value="$(find ur_bringup)/config/ur5e_controllers.yaml" />
     <arg name="controllers" value="$(arg controllers)" />
     <arg name="stopped_controllers" value="$(arg stopped_controllers)" />
   </include>
+
+  <rosparam file="$(find panther_gazebo)/config/panther_ros_controler.yaml" command="load" />
+  <node name="panther_controller_manager" pkg="controller_manager" type="spawner"
+    respawn="false" output="screen" args="panther_base_controller" />
 
   <include file="$(find ur5e_onrobot_rg2_moveit_config)/launch/rg2_bringup_gazebo.launch" />
 

@@ -6,11 +6,13 @@
   <xacro:arg name="wheel_config_path" default="$(find panther_description)/config/WH01.yaml" />
 
   <!-- Robot -->
-  <!-- <xacro:include filename="$(find ur5e_moveit_config)/urdf/panther_temp_macro.urdf.xacro" ns="husarion" /> -->
   <xacro:include filename="$(find panther_description)/urdf/panther_macro.urdf.xacro" ns="husarion" />
-  <xacro:include filename="$(find ur_description)/urdf/inc/ur5e_macro.xacro" ns="universal_robot"/>
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur5e_macro.xacro" ns="universal_robot" />
 
-  <xacro:husarion.panther_robot dual_bat="$(arg dual_bat)" wheel_config_path="$(arg wheel_config_path)" />
+  <xacro:husarion.panther_robot 
+    dual_bat="$(arg dual_bat)"
+    wheel_config_path="$(arg wheel_config_path)" 
+    use_ros_control="True" />
   <xacro:universal_robot.ur5e_robot prefix="panther_ur5e_" />
 
   <joint name="base_link_to_ur5e_link_joint" type="fixed">
@@ -18,19 +20,23 @@
     <parent link="base_link" />
     <child link="panther_ur5e_base_link" />
   </joint>
-  
+
   <!-- Sensors -->
-  <xacro:include filename="$(find ros_components_description)/urdf/velodyne_puck.urdf.xacro" ns="velodyne" />
+  <xacro:include filename="$(find ros_components_description)/urdf/velodyne_puck.urdf.xacro"
+    ns="velodyne" />
   <xacro:include filename="$(find realsense2_description)/urdf/_d435i.urdf.xacro" ns="rs" />
 
-  <xacro:velodyne.velodyne_puck parent_link="base_link" xyz="0.05 -0.13 0.527" rpy="0.0 0.0 0.0" use_gpu="$(arg use_gpu)" />
+  <xacro:velodyne.velodyne_puck parent_link="base_link" xyz="0.05 -0.13 0.527" rpy="0.0 0.0 0.0"
+    use_gpu="$(arg use_gpu)" />
   <xacro:rs.sensor_d435i parent="base_link" use_nominal_extrinsics="true">
     <origin xyz="0.19 0.05 0.427" rpy="0.0 0.0 0.0" />
   </xacro:rs.sensor_d435i>
 
   <!-- Components -->
-  <xacro:include filename="$(find panther_description)/urdf/components/external_antenna.urdf.xacro" ns="antena" />
-  <xacro:include filename="$(find ur_components_description)/urdf/power_supply.urdf.xacro" ns="power_supply" />
+  <xacro:include filename="$(find panther_description)/urdf/components/external_antenna.urdf.xacro"
+    ns="antena" />
+  <xacro:include filename="$(find ur_components_description)/urdf/power_supply.urdf.xacro"
+    ns="power_supply" />
   <xacro:include filename="$(find ur_components_description)/urdf/upper_rails.urdf.xacro" ns="rails" />
 
   <xacro:antena.external_antenna parent_link="base_link" xyz="0.18 0.15 0.377" rpy="0.0 0.0 ${pi}" />

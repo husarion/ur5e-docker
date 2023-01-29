@@ -15,11 +15,11 @@ hardware_interface:
     - panther_ur5e_wrist_1_joint
     - panther_ur5e_wrist_2_joint
     - panther_ur5e_wrist_3_joint
-    - rg2_gripper_joint
-    - fl_wheel_joint
-    - fr_wheel_joint
-    - rl_wheel_joint
-    - rr_wheel_joint
+    # - rg2_gripper_joint
+    # - fl_wheel_joint
+    # - fr_wheel_joint
+    # - rl_wheel_joint
+    # - rr_wheel_joint
   sim_control_mode: 1  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS
@@ -38,3 +38,6 @@ controller_list:
       - panther_ur5e_wrist_1_joint
       - panther_ur5e_wrist_2_joint
       - panther_ur5e_wrist_3_joint
+    constraints:
+      goal_time: 10.0
+      stopped_velocity_tolerance: 5.0

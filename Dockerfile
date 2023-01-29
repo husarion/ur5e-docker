@@ -15,8 +15,7 @@ RUN apt-get update && \
     apt-get install -y \
         git \
         build-essential \
-        python3-pip \
-        ros-$ROS_DISTRO-rqt-joint-trajectory-controller && \
+        python3-pip && \
     pip3 install \
         rosdep \
         vcstool && \
@@ -25,6 +24,7 @@ RUN apt-get update && \
     vcs import src < src/ur5e_onrobot_rg2_moveit_config/assets.repos && \
     # Use only the necessary packages
     mv src/panther_ros/panther_description src/panther_description && \
+    mv src/panther_ros/panther_gazebo src/panther_gazebo && \
     rm -rf src/panther_ros && \
     mv src/universal_robot/ur_description src/ur_description && \
     mv src/universal_robot/ur_gazebo src/ur_gazebo && \

@@ -27,7 +27,7 @@
         </xacro:if>
         <multiplier>${multiplier}</multiplier>
         <offset>${offset}</offset>
-        <sensitiveness>${sensitiveness}</sensitiveness>   
+        <sensitiveness>${sensitiveness}</sensitiveness>
         <maxEffort>${max_effort}</maxEffort>
         <xacro:unless value="${robot_namespace == ''}">
           <robotNamespace>${robot_namespace}</robotNamespace>
@@ -57,14 +57,14 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/collision/RG2_Hand_col.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/hand.stl" />
         </geometry>
       </collision>
 
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/visual/RG2_Hand_vis.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/hand.dae" />
         </geometry>
       </visual>
 
@@ -93,14 +93,14 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/collision/RG2_LeftMomentArm_col.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/moment_arm.stl" />
         </geometry>
       </collision>
 
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/visual/RG2_LeftMomentArm_vis.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/moment_arm.dae" />
         </geometry>
       </visual>
 
@@ -135,14 +135,14 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/collision/RG2_LeftFinger_col.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/finger.stl" />
         </geometry>
       </collision>
 
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/visual/RG2_LeftFinger_vis.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/finger.dae" />
         </geometry>
       </visual>
 
@@ -177,14 +177,14 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/collision/RG2_LeftTrussArm_col.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/truss_arm.stl" />
         </geometry>
       </collision>
 
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/visual/RG2_LeftTrussArm_vis.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/truss_arm.dae" />
         </geometry>
       </visual>
 
@@ -217,16 +217,16 @@
 
     <link name="rg2_r_moment_arm_link">
       <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <origin xyz="0.0 0.0 -0.02" rpy="${pi} 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/collision/RG2_RightMomentArm_col.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/moment_arm.stl" />
         </geometry>
       </collision>
 
       <visual>
-        <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00" />
+        <origin xyz="0.0 0.0 -0.02" rpy="${pi} 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/visual/RG2_RightMomentArm_vis.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/moment_arm.dae" />
         </geometry>
       </visual>
 
@@ -259,16 +259,16 @@
 
     <link name="rg2_r_finger_link">
       <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <origin xyz="0.0 0.0 -0.02" rpy="${pi} 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/collision/RG2_RightFinger_col.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/finger.stl" />
         </geometry>
       </collision>
 
       <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <origin xyz="0.0 0.0 -0.02" rpy="${pi} 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/visual/RG2_RightFinger_vis.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/finger.dae" />
         </geometry>
       </visual>
 
@@ -280,7 +280,7 @@
           izz="0.000026" />
       </inertial>
     </link>
-    
+
     <joint name="rg2_r_finger_passive_joint" type="revolute">
       <parent link="rg2_hand_link" />
       <child link="rg2_r_truss_arm_link" />
@@ -301,16 +301,16 @@
 
     <link name="rg2_r_truss_arm_link">
       <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <origin xyz="0.0 0.0 -0.02" rpy="${pi} 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/collision/RG2_RightTrussArm_col.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/truss_arm.stl" />
         </geometry>
       </collision>
 
       <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <origin xyz="0.0 0.0 -0.02" rpy="${pi} 0.0 0.0" />
         <geometry>
-          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/visual/RG2_RightTrussArm_vis.STL" />
+          <mesh filename="file://$(find ur_components_description)/meshes/onrobot/truss_arm.dae" />
         </geometry>
       </visual>
 
@@ -326,7 +326,7 @@
     <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
         <robotNamespace>/rg2</robotNamespace>
-        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <!-- <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
       </plugin>
     </gazebo>
 
