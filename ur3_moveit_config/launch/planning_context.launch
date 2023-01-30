@@ -20,6 +20,4 @@
   <group ns="$(arg robot_description)_kinematics">
     <rosparam command="load" file="$(find ur3_moveit_config)/config/kinematics.yaml"/>
   </group>
-
-  <node name="state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 </launch>

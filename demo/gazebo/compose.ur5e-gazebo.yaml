@@ -15,8 +15,6 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility,display
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./../../ur5e_moveit_config:/ros_ws/src/ur5e_moveit_config
-      - ./../../ur_bringup:/ros_ws/src/ur_bringup
     command: >
       roslaunch ur_bringup ur5e_gazebo.launch
         use_rviz:=true
